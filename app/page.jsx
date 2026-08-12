@@ -81,6 +81,7 @@ function BrandLogo({ brand }) {
 export default function Home() {
   const [lang, setLang] = useState('es');
   const [lightbox, setLightbox] = useState(null); // project or null
+  const [menuOpen, setMenuOpen] = useState(false); // menú móvil
   const t = useCallback((obj) => obj[lang], [lang]);
 
   // reveal-on-scroll
@@ -101,27 +102,36 @@ export default function Home() {
 
   // lightbox: lock scroll + esc to close
   useEffect(() => {
-    document.body.style.overflow = lightbox ? 'hidden' : '';
-    const onKey = (e) => e.key === 'Escape' && setLightbox(null);
+    document.body.style.overflow = (lightbox || menuOpen) ? 'hidden' : '';
+    const onKey = (e) => { if (e.key === 'Escape') { setLightbox(null); setMenuOpen(false); } };
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [lightbox]);
+  }, [lightbox, menuOpen]);
 
   return (
     <>
       <div className="grain" />
 
-      <nav>
-        <a className="logo" href="#top" aria-label="ACID">
+      <nav className={menuOpen ? 'menu-open' : ''}>
+        <a className="logo" href="#top" aria-label="ACID" onClick={() => setMenuOpen(false)}>
           <Asterisk className="ast" style={{ color: 'var(--red)' }} />
           <Wordmark withR={false} className="wm" />
         </a>
-        <div className="nav-links">
-          <a href="#work">{t(UI.nav.work)}</a>
-          <a href="#studio">{t(UI.nav.studio)}</a>
-          <a href="#services">{t(UI.nav.services)}</a>
-          <a href="#method">{t(UI.method.t)}</a>
-          <a href="#contact" className="cta-nav">{t(UI.nav.cta)}</a>
+        <button
+          className={`nav-burger ${menuOpen ? 'open' : ''}`}
+          aria-label="Menú"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((v) => !v)}
+          data-testid="mobile-menu-toggle"
+        >
+          <span /><span /><span />
+        </button>
+        <div className={`nav-links ${menuOpen ? 'open' : ''}`} data-testid="mobile-menu">
+          <a href="#work" onClick={() => setMenuOpen(false)}>{t(UI.nav.work)}</a>
+          <a href="#studio" onClick={() => setMenuOpen(false)}>{t(UI.nav.studio)}</a>
+          <a href="#services" onClick={() => setMenuOpen(false)}>{t(UI.nav.services)}</a>
+          <a href="#method" onClick={() => setMenuOpen(false)}>{t(UI.method.t)}</a>
+          <a href="#contact" className="cta-nav" onClick={() => setMenuOpen(false)}>{t(UI.nav.cta)}</a>
           <div className="lang">
             <button className={lang === 'es' ? 'on' : ''} onClick={() => setLang('es')}>ES</button>
             <button className={lang === 'en' ? 'on' : ''} onClick={() => setLang('en')}>EN</button>

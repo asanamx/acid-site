@@ -77,6 +77,15 @@ NO regenerar, NO cambiar de framework, NO rediseñar. Solo cambios quirúrgicos 
   sin overflow horizontal, secciones apilan bien. Pendiente/opcional: menú hamburguesa en ≤820px (hoy los
   links de sección se ocultan por diseño, solo Hablemos+ES/EN).
 
+- **2026-06-12h — Menú hamburguesa móvil (verificado 100%):** en ≤820px el nav muestra logo + botón
+  hamburguesa; abre overlay full-screen con Trabajo·Estudio·Servicios·Método·Hablemos + toggle ES/EN;
+  cada link navega y cierra el menú (setMenuOpen(false)); scroll-lock del body; `nav.menu-open{z-index:400}`
+  cubre el chat FAB. Desktop intacto. Markup en page.jsx (state menuOpen, data-testid mobile-menu-toggle /
+  mobile-menu) + CSS en globals.css. Además: `.brand-logo` afinado (30px, object-fit contain, max-width 180).
+- **Logos de clientes:** creada carpeta `/public/logos/` (con README de nombres). Los logos subidos por el
+  usuario a GitHub NO se sincronizan al workspace (solo README local) → no se pueden previsualizar/afinar
+  hasta tenerlos aquí. Nombres esperados: landrover, mtv, bbva, tec, pachuca, tajin, bamx, hlb, catal, zoebisch (.svg).
+
 ## ⛔ REGLA PERMANENTE — Assets binarios (NO NEGOCIABLE)
 - Las carpetas `public/media/` y `public/logos/` contienen assets binarios que se administran
   subiéndolos DIRECTO a GitHub, FUERA del flujo del agente.
