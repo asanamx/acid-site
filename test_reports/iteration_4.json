@@ -1,0 +1,60 @@
+{
+  "summary": "Frontend-only validation of two fixes: (1) scroll-hint / chat-fab overlap, (2) chat FAB restyle to asymmetric bubble with smaller asterisk. All requested assertions passed at 1920x1080 viewport, plus no regressions on routes, nav order, logo, anchors, and ES/EN toggle.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_results_detail": {
+    "overlap_fix": {
+      "scroll_hint_rect": {"left": 1696.59, "right": 1810, "top": 980, "bottom": 1024},
+      "chat_fab_rect": {"left": 1838, "right": 1894, "top": 998, "bottom": 1054},
+      "intersect": false,
+      "scroll_hint_right_lt_chat_fab_left": true,
+      "both_visible": true,
+      "status": "PASS"
+    },
+    "chat_fab_restyle": {
+      "border_radius_computed": "50% 50% 6px (equivalent to '50% 50% 6px 50%')",
+      "width": "56px",
+      "svg_width": "18px",
+      "svg_height": "18px",
+      "not_fully_round": true,
+      "status": "PASS"
+    },
+    "chat_functionality": {
+      "opens_on_click": true,
+      "greeting_shown": "Hola — soy el asistente de ACID. Pregúntame sobre servicios, proceso o cómo arrancar tu proyecto.",
+      "fab_has_off_class_while_open": true,
+      "input_accepts_text": true,
+      "close_button_hides_panel": true,
+      "fab_reappears_after_close": true,
+      "status": "PASS"
+    },
+    "no_regressions": {
+      "home_status": 200,
+      "aviso_privacidad_status": 200,
+      "aviso_legal_status": 200,
+      "nav_order": ["Trabajo", "Estudio", "Servicios", "Hablemos"],
+      "nav_hrefs": ["#work", "#studio", "#services", "#contact"],
+      "logo_svg_count": 2,
+      "anchor_click_updates_hash": "http://localhost:3000/#work after clicking a[href='#work']",
+      "lang_toggle_es_to_en": "'Cine que vende.' -> 'Film that sells.' (H1 changed)",
+      "status": "PASS"
+    }
+  },
+  "notes": [
+    "Console shows some 404s for static resources (likely optional media assets); unrelated to this iteration's fixes.",
+    "getComputedStyle returns '50% 50% 6px' which is the CSS shorthand normalization of '50% 50% 6px 50%' (bottom-left equals top-right); this is the expected asymmetric bubble shape with a small 6px tail at the bottom-right corner."
+  ],
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (frontend-only)", "frontend": "100%"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "All requested assertions for iteration 4 passed. Chat FAB is a chat-bubble (asymmetric) shape with 18px asterisk; scroll-hint and FAB do not overlap at 1920px. Console 404s for missing media assets exist but are pre-existing and out of scope."
+}

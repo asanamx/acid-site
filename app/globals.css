@@ -56,6 +56,7 @@ h1 .alt{color:transparent;-webkit-text-stroke:1.5px var(--ink)}
 .scroll-hint{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-dim);display:flex;align-items:center;gap:12px;white-space:nowrap}
 .scroll-hint::after{content:"";width:1px;height:44px;background:linear-gradient(180deg,var(--acid),transparent);animation:drip 1.8s ease-in-out infinite}
 @keyframes drip{0%{transform:scaleY(.2);transform-origin:top}55%{transform:scaleY(1)}100%{opacity:0}}
+@media(min-width:821px){.scroll-hint{margin-right:78px}}
 
 /* ---------- MARQUEE ---------- */
 .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:22px 0;background:var(--bg)}
@@ -223,7 +224,7 @@ footer{border-top:1px solid var(--line);padding:28px 32px;display:flex;justify-c
 .legal p{font-size:15px;line-height:1.75;color:#c9cdd2}
 
 /* ---------- CHAT AGENT ---------- */
-.chat-fab{position:fixed;bottom:26px;right:26px;z-index:300;width:58px;height:58px;border-radius:99px;border:1px solid rgba(255,255,255,.12);
+.chat-fab{position:fixed;bottom:26px;right:26px;z-index:300;width:56px;height:56px;border-radius:50% 50% 6px 50%;border:1px solid rgba(255,255,255,.12);
   background:var(--red);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 34px rgba(188,0,0,.35);transition:transform .25s}
 .chat-fab:hover{transform:translateY(-3px)}
 .chat-fab.off{display:none}

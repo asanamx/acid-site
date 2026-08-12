@@ -66,6 +66,11 @@ NO regenerar, NO cambiar de framework, NO rediseñar. Solo cambios quirúrgicos 
   https://pub-50fa636f879644e7b8c63ad00084be5b.r2.dev/<key>.mp4. OJO: al cierre, 4 devuelven 404 en R2
   (playera, tajin, wine, zoebisch) — pendientes de subir/renombrar del lado del usuario.
 
+- **2026-06-12f — Overlap hint + FAB burbuja (verificado 100%):** (1) `.scroll-hint` ("Ver trabajo")
+  ya no se encima con el `.chat-fab` (media query desktop `margin-right:78px`). (2) FAB del asistente
+  restyle a burbuja de chat: `border-radius:50% 50% 6px 50%`, 56px, con el asterisco reducido a 18px.
+  Chat abre/cierra OK. Asterisco restaurado en el logo del header (a pedido del usuario).
+
 ## ⛔ REGLA PERMANENTE — Assets binarios (NO NEGOCIABLE)
 - Las carpetas `public/media/` y `public/logos/` contienen assets binarios que se administran
   subiéndolos DIRECTO a GitHub, FUERA del flujo del agente.
