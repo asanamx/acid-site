@@ -120,6 +120,7 @@ export default function Home() {
           <a href="#work">{t(UI.nav.work)}</a>
           <a href="#studio">{t(UI.nav.studio)}</a>
           <a href="#services">{t(UI.nav.services)}</a>
+          <a href="#method">{t(UI.method.t)}</a>
           <a href="#contact" className="cta-nav">{t(UI.nav.cta)}</a>
           <div className="lang">
             <button className={lang === 'es' ? 'on' : ''} onClick={() => setLang('es')}>ES</button>

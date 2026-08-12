@@ -224,7 +224,7 @@ footer{border-top:1px solid var(--line);padding:28px 32px;display:flex;justify-c
 .legal p{font-size:15px;line-height:1.75;color:#c9cdd2}
 
 /* ---------- CHAT AGENT ---------- */
-.chat-fab{position:fixed;bottom:26px;right:26px;z-index:300;width:56px;height:56px;border-radius:50% 50% 6px 50%;border:1px solid rgba(255,255,255,.12);
+.chat-fab{position:fixed;bottom:26px;right:26px;z-index:300;width:46px;height:46px;border-radius:50% 50% 5px 50%;border:1px solid rgba(255,255,255,.12);
   background:var(--red);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 34px rgba(188,0,0,.35);transition:transform .25s}
 .chat-fab:hover{transform:translateY(-3px)}
 .chat-fab.off{display:none}

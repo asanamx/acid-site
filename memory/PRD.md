@@ -71,6 +71,12 @@ NO regenerar, NO cambiar de framework, NO rediseñar. Solo cambios quirúrgicos 
   restyle a burbuja de chat: `border-radius:50% 50% 6px 50%`, 56px, con el asterisco reducido a 18px.
   Chat abre/cierra OK. Asterisco restaurado en el logo del header (a pedido del usuario).
 
+- **2026-06-12g — Menús alineados + FAB más chico + check móvil:** (1) Agregado "El método" al menú
+  principal → menú y footer comparten Trabajo·Estudio·Servicios·Método en el mismo orden (Hablemos = CTA).
+  (2) FAB del chat reducido a 46px con asterisco 15px (sigue forma burbuja). (3) Móvil 375px revisado:
+  sin overflow horizontal, secciones apilan bien. Pendiente/opcional: menú hamburguesa en ≤820px (hoy los
+  links de sección se ocultan por diseño, solo Hablemos+ES/EN).
+
 ## ⛔ REGLA PERMANENTE — Assets binarios (NO NEGOCIABLE)
 - Las carpetas `public/media/` y `public/logos/` contienen assets binarios que se administran
   subiéndolos DIRECTO a GitHub, FUERA del flujo del agente.

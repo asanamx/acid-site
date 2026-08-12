@@ -49,7 +49,7 @@ export default function Chat({ lang }) {
   return (
     <>
       <button className={`chat-fab ${open ? 'off' : ''}`} onClick={() => setOpen(true)} aria-label={t(AGENT.title)}>
-        <Asterisk style={{ width: 18, height: 18, color: '#eceef0' }} />
+        <Asterisk style={{ width: 15, height: 15, color: '#eceef0' }} />
       </button>
 
       {open && (
