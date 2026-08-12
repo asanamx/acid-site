@@ -44,6 +44,14 @@ NO regenerar, NO cambiar de framework, NO rediseñar. Solo cambios quirúrgicos 
 - Datos reales de las páginas legales (`[CORCHETES]` / `[FECHA]`).
 - Logos de marca en `/public/logos/*.svg` (mientras faltan, se muestra el nombre en texto — por diseño).
 
+- **2026-06-12b — Logo aliaseado en header (fix quirúrgico, verificado 100%):**
+  Causa raíz: `nav` tenía `backdrop-filter:blur(14px)` → su hijo (logo SVG) se rasterizaba en la capa
+  filtrada y perdía anti-aliasing (bordes escalonados). Fix: mover `backdrop-filter` + fondo translúcido
+  a `nav::before` (z-index:-1) + `isolation:isolate` en `nav`. Mismo efecto glass, logo/links crisp y
+  clickeables. El logo del footer está en capa limpia (sin filtros) → ya es vectorial nítido; único
+  residuo posible es el grano global a .02 (intencional). Videos 1080p del usuario AÚN sin sincronizar
+  al workspace (siguen 1.4MB/1.1MB) — pendiente "Pull from GitHub".
+
 ## ⛔ REGLA PERMANENTE — Assets binarios (NO NEGOCIABLE)
 - Las carpetas `public/media/` y `public/logos/` contienen assets binarios que se administran
   subiéndolos DIRECTO a GitHub, FUERA del flujo del agente.
