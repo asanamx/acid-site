@@ -99,6 +99,13 @@ NO regenerar, NO cambiar de framework, NO rediseñar. Solo cambios quirúrgicos 
   Land Rover 72px. Logos activos: Land Rover, MTV, BBVA, Tec, Tajín, HLB. Nota: mtv.svg original era un
   WebP renombrado (fallaba); el usuario lo re-subió como SVG real. Faltan: pachuca, bamx, catal, zoebisch.
 
+- **2026-06-12k — Fix logos multicolor + parpadeo HLB (verificado 100%):** el `filter:brightness(0) invert(1)`
+  aplanaba a blanco los logos multicolor (Pachuca, MTV → manchas) y, en HLB (ya blanco), causaba
+  re-rasterizado/parpadeo. Fix: override `filter:none` para HLB, Pachuca y MTV (muestran su color/blanco
+  propio). Se mantiene el filtro blanco solo en logos de un color oscuro (Land Rover, BBVA, Tec, Tajín).
+  Resultado: marquee MIXTO (color + blanco). DECISIÓN PENDIENTE del usuario: unificar todo a blanco
+  (requiere versiones mono/blancas de MTV y Pachuca) vs dejar el mix. Faltan aún: bamx, catal, zoebisch.
+
 ## ⛔ REGLA PERMANENTE — Assets binarios (NO NEGOCIABLE)
 - Las carpetas `public/media/` y `public/logos/` contienen assets binarios que se administran
   subiéndolos DIRECTO a GitHub, FUERA del flujo del agente.

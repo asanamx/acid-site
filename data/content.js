@@ -16,7 +16,6 @@ export const BRANDS = [
   { name: 'BAMX',              logo: '/logos/bamx.svg' },
   { name: 'HLB',               logo: '/logos/hlb.svg' },
   { name: 'Catal 1.5°T',       logo: '/logos/catal.svg' },
-  { name: 'Zoebisch',          logo: '/logos/zoebisch.svg' },
 ];
 
 export const PROJECTS = [
@@ -66,10 +65,6 @@ export const PROJECTS = [
     video: 'https://pub-50fa636f879644e7b8c63ad00084be5b.r2.dev/catal.mp4',
     tag:  { es: 'Eventos', en: 'Events' },
     desc: { es: 'Recap · Emprendimiento climático', en: 'Recap · Climate entrepreneurship' } },
-  { key: 'zoebisch', span: 4, img: '/media/zoebisch_35.jpg', client: 'Zoebisch',
-    video: 'https://pub-50fa636f879644e7b8c63ad00084be5b.r2.dev/zoebisch.mp4',
-    tag:  { es: 'Educación', en: 'Education' },
-    desc: { es: 'Campaña institucional educativa', en: 'Educational brand campaign' } },
 ];
 
 export const STEPS = [

@@ -196,6 +196,10 @@ footer{border-top:1px solid var(--line);padding:28px 32px;display:flex;justify-c
 .brand-logo[alt="Club Pachuca"]{height:66px}
 .brand-logo[alt="MTV"]{height:50px}
 .brand-logo[alt="Tajín"]{height:46px}
+/* logos que ya traen color/blanco propio: sin filtro (evita mancha blanca y el parpadeo) */
+.brand-logo[alt="HLB"]{filter:none}
+.brand-logo[alt="Club Pachuca"],
+.brand-logo[alt="MTV"]{filter:grayscale(1) brightness(1.15)}
 .brand-item:hover .brand-logo{opacity:1}
 .brand-text{font-size:15px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-dim);font-weight:600;white-space:nowrap}
 
