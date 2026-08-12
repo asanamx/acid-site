@@ -193,6 +193,7 @@ footer{border-top:1px solid var(--line);padding:28px 32px;display:flex;justify-c
 .brand-item{display:flex;align-items:center}
 .brand-logo{height:30px;width:auto;max-width:180px;object-fit:contain;display:block;filter:brightness(0) invert(1);opacity:.72;transition:opacity .3s}
 .brand-logo[alt="Land Rover"]{height:72px}
+.brand-logo[alt="Club Pachuca"]{height:66px}
 .brand-logo[alt="MTV"]{height:50px}
 .brand-logo[alt="Tajín"]{height:46px}
 .brand-item:hover .brand-logo{opacity:1}
