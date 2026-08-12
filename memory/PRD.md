@@ -86,6 +86,13 @@ NO regenerar, NO cambiar de framework, NO rediseñar. Solo cambios quirúrgicos 
   usuario a GitHub NO se sincronizan al workspace (solo README local) → no se pueden previsualizar/afinar
   hasta tenerlos aquí. Nombres esperados: landrover, mtv, bbva, tec, pachuca, tajin, bamx, hlb, catal, zoebisch (.svg).
 
+- **2026-06-12i — Logos sincronizados (3):** descargados desde GitHub (raw) a `/public/logos/`:
+  landrover.svg, bbva.svg, tec.svg. Renderizan como IMG blancas en el marquee (height 30, contain).
+  Faltan 7 (mtv, pachuca, tajin, bamx, hlb, catal, zoebisch). ⚠️ RIESGO: el usuario agrega logos directo
+  en GitHub pero el workspace NO se auto-sincroniza; un "Save to GitHub" desde Emergent podría BORRAR del
+  repo los logos que estén en GitHub pero no en el workspace. Mitigación: pedir las URLs de cada logo nuevo
+  y bajarlas al workspace ANTES de guardar.
+
 ## ⛔ REGLA PERMANENTE — Assets binarios (NO NEGOCIABLE)
 - Las carpetas `public/media/` y `public/logos/` contienen assets binarios que se administran
   subiéndolos DIRECTO a GitHub, FUERA del flujo del agente.
