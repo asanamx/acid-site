@@ -44,6 +44,13 @@ NO regenerar, NO cambiar de framework, NO rediseñar. Solo cambios quirúrgicos 
 - Datos reales de las páginas legales (`[CORCHETES]` / `[FECHA]`).
 - Logos de marca en `/public/logos/*.svg` (mientras faltan, se muestra el nombre en texto — por diseño).
 
+## ⛔ REGLA PERMANENTE — Assets binarios (NO NEGOCIABLE)
+- Las carpetas `public/media/` y `public/logos/` contienen assets binarios que se administran
+  subiéndolos DIRECTO a GitHub, FUERA del flujo del agente.
+- NUNCA generar, modificar ni eliminar archivos dentro de `public/media/` ni `public/logos/`.
+- ANTES de cada "Save to GitHub", hacer PULL del repo para incorporar cambios externos y no
+  sobreescribir esos binarios.
+
 ## Notas
 - `ANTHROPIC_API_KEY` se configura en Vercel; sin llave el chat responde en modo offline (cortesía).
 - No hay backend separado: `/api/chat` es ruta serverless de Next.
