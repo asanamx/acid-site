@@ -37,8 +37,15 @@ nav::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(26,2
 
 /* ---------- HERO ---------- */
 .hero{position:relative;height:100svh;min-height:620px;display:flex;align-items:flex-end;overflow:hidden}
-.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.72) saturate(1.05)}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,26,26,.55) 0%,rgba(26,26,26,0) 30%,rgba(26,26,26,0) 55%,rgba(26,26,26,.96) 100%)}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.06);transform-origin:center;animation:heroKen 30s ease-in-out infinite alternate;filter:brightness(.66) contrast(1.08) saturate(1.06)}
+@keyframes heroKen{from{transform:scale(1.06)}to{transform:scale(1.14)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;opacity:.07;mix-blend-mode:overlay;background-size:200px 200px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='hn'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23hn)' opacity='0.7'/%3E%3C/svg%3E");
+  animation:heroGrain .5s steps(3) infinite}
+@keyframes heroGrain{0%{background-position:0 0}33%{background-position:-28px 12px}66%{background-position:22px -18px}100%{background-position:-12px 16px}}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;background:
+  radial-gradient(135% 120% at 50% 34%,rgba(0,0,0,0) 46%,rgba(0,0,0,.52) 100%),
+  linear-gradient(180deg,rgba(26,26,26,.62) 0%,rgba(26,26,26,0) 26%,rgba(26,26,26,0) 50%,rgba(26,26,26,.97) 100%)}
 .hero-inner{position:relative;z-index:2;width:100%;padding:0 32px 56px}
 .kicker{display:inline-flex;align-items:center;gap:10px;font-style:italic;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--acid);margin-bottom:18px}
 .kicker::before{content:"";width:26px;height:1px;background:var(--acid)}

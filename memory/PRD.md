@@ -57,6 +57,15 @@ NO regenerar, NO cambiar de framework, NO rediseñar. Solo cambios quirúrgicos 
   `hero_loop.webm` 5.37MB (1920×1080, VP9 24fps). Verificado por ffprobe + screenshot: hero nítido,
   reproduce el webm (fallback mp4 para Safari/iOS presente). Fin del pixeleo del hero.
 
+- **2026-06-12d — Menú por flow + hero cinematográfico:** (1) Nav reordenado a Trabajo·Estudio·Servicios·
+  Hablemos para coincidir con el scroll real de secciones (y con el footer). (2) Hero con tratamiento cine
+  CSS-only: viñeta radial, grade (brightness .66 / contrast 1.08 / saturate 1.06), grano de película
+  animado scoped al hero (::before, opacity .07, mix-blend overlay, animación heroGrain) y Ken Burns
+  (scale 1.06→1.14 en 30s, heroKen). Sin assets nuevos, paleta intacta. Parámetros calibrables a gusto.
+- **2026-06-12e — Portafolio videos R2:** los 12 campos `video` de PROJECTS apuntan a
+  https://pub-50fa636f879644e7b8c63ad00084be5b.r2.dev/<key>.mp4. OJO: al cierre, 4 devuelven 404 en R2
+  (playera, tajin, wine, zoebisch) — pendientes de subir/renombrar del lado del usuario.
+
 ## ⛔ REGLA PERMANENTE — Assets binarios (NO NEGOCIABLE)
 - Las carpetas `public/media/` y `public/logos/` contienen assets binarios que se administran
   subiéndolos DIRECTO a GitHub, FUERA del flujo del agente.
