@@ -93,6 +93,12 @@ NO regenerar, NO cambiar de framework, NO rediseñar. Solo cambios quirúrgicos 
   repo los logos que estén en GitHub pero no en el workspace. Mitigación: pedir las URLs de cada logo nuevo
   y bajarlas al workspace ANTES de guardar.
 
+- **2026-06-12j — Parpadeo marquee + MTV/HLB (verificado 100%):** `.track` promovido a capa GPU
+  estable (`will-change:transform` + `backface-visibility:hidden`, keyframe `translate3d(-50%,0,0)`)
+  para eliminar el shimmer de SVG con líneas finas (Tec, HLB) al animarse. MTV ampliado a 50px, Tajín 46px,
+  Land Rover 72px. Logos activos: Land Rover, MTV, BBVA, Tec, Tajín, HLB. Nota: mtv.svg original era un
+  WebP renombrado (fallaba); el usuario lo re-subió como SVG real. Faltan: pachuca, bamx, catal, zoebisch.
+
 ## ⛔ REGLA PERMANENTE — Assets binarios (NO NEGOCIABLE)
 - Las carpetas `public/media/` y `public/logos/` contienen assets binarios que se administran
   subiéndolos DIRECTO a GitHub, FUERA del flujo del agente.

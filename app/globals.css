@@ -76,10 +76,10 @@ h1 .alt{color:transparent;-webkit-text-stroke:1.5px var(--ink)}
 
 /* ---------- MARQUEE ---------- */
 .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:22px 0;background:var(--bg)}
-.track{display:flex;gap:64px;width:max-content;animation:scroll 30s linear infinite}
+.track{display:flex;gap:64px;width:max-content;animation:scroll 30s linear infinite;will-change:transform;backface-visibility:hidden}
 .track span{font-size:15px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-dim);white-space:nowrap;font-weight:600}
 .track span i{font-style:normal;color:var(--acid);margin-right:64px}
-@keyframes scroll{to{transform:translateX(-50%)}}
+@keyframes scroll{to{transform:translate3d(-50%,0,0)}}
 
 /* ---------- SECTIONS ---------- */
 section{padding:110px 32px}
@@ -193,6 +193,7 @@ footer{border-top:1px solid var(--line);padding:28px 32px;display:flex;justify-c
 .brand-item{display:flex;align-items:center}
 .brand-logo{height:30px;width:auto;max-width:180px;object-fit:contain;display:block;filter:brightness(0) invert(1);opacity:.72;transition:opacity .3s}
 .brand-logo[alt="Land Rover"]{height:72px}
+.brand-logo[alt="MTV"]{height:50px}
 .brand-logo[alt="Tajín"]{height:46px}
 .brand-item:hover .brand-logo{opacity:1}
 .brand-text{font-size:15px;letter-spacing:.28em;text-transform:uppercase;color:var(--ink-dim);font-weight:600;white-space:nowrap}
