@@ -1,0 +1,25 @@
+{
+  "summary": "Frontend-only verification of surgical edits on ACID one-page site (Next.js @ localhost:3000). All 5 acceptance criteria PASS: (1) nav .logo contains exactly 1 <svg> (Wordmark only, asterisk removed) — visually confirmed 'ACID' wordmark alone in top-left; (2) asterisk SVG still present in contact section (1 svg with class ast-contact), footer .foot-logo (2 svgs = asterisk + wordmark) and .chat-fab (1 svg, red asterisk visible bottom-right); (3) computed opacity of .grain === '0.02'; (4) both mailto hrefs point to mailto:contacto@acidstudio.mx, visible body text contains 'contacto@acidstudio.mx' and NOT 'contacto@acid.mx'; (5) no regressions — /, /aviso-de-privacidad, /aviso-legal all return HTTP 200; nav anchor clicks (#work,#services,#studio,#contact) all update URL hash at 1920px viewport; ES/EN toggle correctly switches hero H1 between 'CINE QUE / VENDE.' and 'FILM THAT / SELLS.' and back; zero JS pageerror events.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "All pages", "issues": ["~10 static asset 404s in browser console (media/logos assets referenced by markup but missing from /public). Non-blocking to rendering; carried over from iteration 1 and NOT in scope for these surgical fixes."]}
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Static asset 404s persist (pre-existing, not in scope this iteration) — main agent may consider adding referenced /public/logos/*.svg and /public/media/*.jpg or gating <img> with graceful fallback like BrandLogo already does.",
+    "Residual thumbnail image softness on 1x displays is an asset-source limitation (out of scope per request)."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (not requested)", "frontend": "100%"},
+  "test_credentials": "N/A (no auth)",
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "Site runs at http://localhost:3000 via supervisor (directory=/app, yarn dev). Verified DOM: document.querySelectorAll('nav .logo svg').length === 1; getComputedStyle('.grain').opacity === '0.02'; all mailto anchors → contacto@acidstudio.mx. Test anchor links at desktop viewport >=1440px (hidden by CSS <=820px).",
+  "rca of the issue": "N/A — surgical fixes verified working; no regressions."
+}

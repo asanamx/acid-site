@@ -113,7 +113,6 @@ export default function Home() {
 
       <nav>
         <a className="logo" href="#top" aria-label="ACID">
-          <Asterisk className="ast" style={{ color: 'var(--red)' }} />
           <Wordmark withR={false} className="wm" />
         </a>
         <div className="nav-links">

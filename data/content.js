@@ -134,7 +134,7 @@ export const ARSENAL = [
 ];
 
 export const UI = {
-  contactEmail: 'contacto@acid.mx', // ← cambia por el correo definitivo
+  contactEmail: 'contacto@acidstudio.mx', // ← cambia por el correo definitivo
   nav:        { work: { es: 'Trabajo', en: 'Work' }, services: { es: 'Servicios', en: 'Services' },
                 studio: { es: 'Estudio', en: 'Studio' }, cta: { es: 'Hablemos', en: "Let's talk" } },
   hero: {

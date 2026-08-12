@@ -28,6 +28,14 @@ NO regenerar, NO cambiar de framework, NO rediseñar. Solo cambios quirúrgicos 
   `directory=/app` + `command=yarn dev` en PORT=3000. Verificado por testing_agent: 100% frontend,
   home + ambas legales renderizan, anclas y toggle ES/EN OK.
 
+- **2026-06-12 — Nitidez / pixelado (cambios quirúrgicos, verificado 100%):**
+  Causa raíz del "todo pixeleado" en monitor 1x = overlay `.grain` a pantalla completa (op .05).
+  (1) `.grain` opacidad .05 → .02 (textura fílmica sutil, quita percepción de pixeleo sobre texto/UI).
+  (2) Asterisco eliminado del logo del header (queda solo wordmark "ACID"); se mantiene en footer,
+  contacto y FAB del chat. (3) Correo → `contacto@acidstudio.mx` (dominio confirmado acidstudio.mx).
+  Logo/wordmark/asterisco son SVG vectoriales → nítidos a cualquier resolución. Pixelado restante de
+  thumbnails = limitación del archivo fuente (JPG 1000×562 muy comprimidos, algunos con texto quemado).
+
 ## Pendiente (a la espera de datos del usuario, en un solo mensaje)
 - Correo definitivo (`UI.contactEmail`).
 - Redes sociales reales (`FOOTER.social[].url`).
