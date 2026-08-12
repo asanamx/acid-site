@@ -52,6 +52,11 @@ NO regenerar, NO cambiar de framework, NO rediseñar. Solo cambios quirúrgicos 
   residuo posible es el grano global a .02 (intencional). Videos 1080p del usuario AÚN sin sincronizar
   al workspace (siguen 1.4MB/1.1MB) — pendiente "Pull from GitHub".
 
+- **2026-06-12c — Hero en 1080p:** el usuario subió los reels por artifact URL y (excepción puntual
+  autorizada) los coloqué en `public/media/`: `hero_loop.mp4` 7.79MB (1920×1080, H264 ~6Mbps, 10.3s) y
+  `hero_loop.webm` 5.37MB (1920×1080, VP9 24fps). Verificado por ffprobe + screenshot: hero nítido,
+  reproduce el webm (fallback mp4 para Safari/iOS presente). Fin del pixeleo del hero.
+
 ## ⛔ REGLA PERMANENTE — Assets binarios (NO NEGOCIABLE)
 - Las carpetas `public/media/` y `public/logos/` contienen assets binarios que se administran
   subiéndolos DIRECTO a GitHub, FUERA del flujo del agente.
