@@ -112,6 +112,9 @@ NO regenerar, NO cambiar de framework, NO rediseñar. Solo cambios quirúrgicos 
   (rojo-naranja usado en acentos). El brief solo permite #BC0000; `--acid` es un rojo extra pre-existente.
   PENDIENTE: preguntar al usuario si homologar `--acid` a `#BC0000`.
 
+- **2026-06-12m — Paleta unificada:** `--acid` cambiado de #D81A0E a **#BC0000** (= `--red`). Todo el rojo
+  del sitio ahora es el Rojo ACiD del brief. Verificado: kicker/acentos = rgb(188,0,0).
+
 ## ⛔ REGLA PERMANENTE — Assets binarios (NO NEGOCIABLE)
 - Las carpetas `public/media/` y `public/logos/` contienen assets binarios que se administran
   subiéndolos DIRECTO a GitHub, FUERA del flujo del agente.
