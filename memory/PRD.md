@@ -106,6 +106,12 @@ NO regenerar, NO cambiar de framework, NO rediseñar. Solo cambios quirúrgicos 
   Resultado: marquee MIXTO (color + blanco). DECISIÓN PENDIENTE del usuario: unificar todo a blanco
   (requiere versiones mono/blancas de MTV y Pachuca) vs dejar el mix. Faltan aún: bamx, catal, zoebisch.
 
+- **2026-06-12l — Fix número "02" del método + hallazgo de paleta (verificado 100%):** `.step b`
+  font-weight 800→600 para que el contorno (`-webkit-text-stroke`) de los números 01-04 se vea limpio
+  (antes doble/dentado). HALLAZGO: `:root` tiene DOS rojos → `--red:#BC0000` (brand) y `--acid:#D81A0E`
+  (rojo-naranja usado en acentos). El brief solo permite #BC0000; `--acid` es un rojo extra pre-existente.
+  PENDIENTE: preguntar al usuario si homologar `--acid` a `#BC0000`.
+
 ## ⛔ REGLA PERMANENTE — Assets binarios (NO NEGOCIABLE)
 - Las carpetas `public/media/` y `public/logos/` contienen assets binarios que se administran
   subiéndolos DIRECTO a GitHub, FUERA del flujo del agente.

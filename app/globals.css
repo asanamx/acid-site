@@ -138,7 +138,7 @@ h2{font-size:clamp(34px,5vw,64px);font-weight:800;letter-spacing:-.02em;text-tra
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:step}
 .step{border:1px solid var(--line);border-radius:10px;padding:30px 24px;background:var(--bg2);position:relative;transition:border-color .3s,transform .3s}
 .step:hover{border-color:var(--acid);transform:translateY(-4px)}
-.step b{display:block;font-size:52px;font-weight:800;line-height:1;color:transparent;-webkit-text-stroke:1.2px var(--acid);margin-bottom:18px}
+.step b{display:block;font-size:52px;font-weight:600;line-height:1;color:transparent;-webkit-text-stroke:1.2px var(--acid);margin-bottom:18px}
 .step h3{font-size:18px;font-weight:700;margin-bottom:10px;letter-spacing:.01em}
 .step p{font-size:13.5px;line-height:1.65;color:var(--ink-dim)}
 .step::after{content:"";position:absolute;top:50%;right:-14px;width:14px;height:1px;background:var(--line)}
