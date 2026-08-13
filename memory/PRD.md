@@ -133,5 +133,9 @@ NO regenerar, NO cambiar de framework, NO rediseñar. Solo cambios quirúrgicos 
   sobreescribir esos binarios.
 
 ## Notas
+- **2026-06-13b — Nav transparente sobre hero / sólido al scroll (verificado):** estado `scrolled`
+  (window.scrollY > 50) en page.jsx. En el tope, `nav::before` = rgba(26,26,26,.14) + blur(3px) y sin
+  borde → deja ver el video. Con scroll, `nav.scrolled::before` = rgba(26,26,26,.88) + blur(14px) + borde
+  inferior sutil. Transición .45s en background/backdrop-filter. CSS-only en globals.css.
 - `ANTHROPIC_API_KEY` se configura en Vercel; sin llave el chat responde en modo offline (cortesía).
 - No hay backend separado: `/api/chat` es ruta serverless de Next.

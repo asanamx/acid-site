@@ -83,12 +83,21 @@ export default function Home() {
   const [lightbox, setLightbox] = useState(null); // project or null
   const [menuOpen, setMenuOpen] = useState(false); // menú móvil
   const [heroPlay, setHeroPlay] = useState(false); // dispara el reveal cinematográfico una sola vez
+  const [scrolled, setScrolled] = useState(false); // nav sólido al hacer scroll / transparente sobre el hero
   const t = useCallback((obj) => obj[lang], [lang]);
 
   // reveal cinematográfico del hero: se ejecuta una única vez tras la hidratación
   useEffect(() => {
     const id = requestAnimationFrame(() => setHeroPlay(true));
     return () => cancelAnimationFrame(id);
+  }, []);
+
+  // nav: transparente sobre el hero, sólido en cuanto se hace scroll
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   // reveal-on-scroll
@@ -119,7 +128,7 @@ export default function Home() {
     <>
       <div className="grain" />
 
-      <nav className={menuOpen ? 'menu-open' : ''}>
+      <nav className={`${menuOpen ? 'menu-open' : ''} ${scrolled ? 'scrolled' : ''}`}>
         <a className="logo" href="#top" aria-label="ACID" onClick={() => setMenuOpen(false)}>
           <Asterisk className="ast" style={{ color: 'var(--red)' }} />
           <Wordmark withR={false} className="wm" />

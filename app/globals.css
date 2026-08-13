@@ -13,9 +13,11 @@ img,video{display:block;max-width:100%}
 
 /* ---------- NAV ---------- */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;
-  padding:18px 32px;border-bottom:1px solid rgba(255,255,255,.06);isolation:isolate}
-nav::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(26,26,26,.88);
-  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+  padding:18px 32px;border-bottom:1px solid rgba(255,255,255,0);isolation:isolate;transition:border-color .4s ease}
+nav::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(26,26,26,.14);
+  backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);transition:background .45s ease,backdrop-filter .45s ease}
+nav.scrolled{border-bottom-color:rgba(255,255,255,.06)}
+nav.scrolled::before{background:rgba(26,26,26,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
 .logo{display:flex;align-items:center;color:var(--ink);transition:color .3s}
 .logo:hover{color:var(--acid)}
 .logo .wm{height:23px;width:auto;display:block}
