@@ -82,7 +82,14 @@ export default function Home() {
   const [lang, setLang] = useState('es');
   const [lightbox, setLightbox] = useState(null); // project or null
   const [menuOpen, setMenuOpen] = useState(false); // menú móvil
+  const [heroPlay, setHeroPlay] = useState(false); // dispara el reveal cinematográfico una sola vez
   const t = useCallback((obj) => obj[lang], [lang]);
+
+  // reveal cinematográfico del hero: se ejecuta una única vez tras la hidratación
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setHeroPlay(true));
+    return () => cancelAnimationFrame(id);
+  }, []);
 
   // reveal-on-scroll
   useEffect(() => {
@@ -139,11 +146,12 @@ export default function Home() {
         </div>
       </nav>
 
-      <header className="hero" id="top">
+      <header className={`hero hero-cine ${heroPlay ? 'play' : ''}`} id="top">
         <video autoPlay muted loop playsInline>
           <source src="/media/hero_loop.webm" type="video/webm" />
           <source src="/media/hero_loop.mp4" type="video/mp4" />
         </video>
+        <div className="hero-veil" aria-hidden="true" />
         <div className="hero-inner">
           <div className="kicker">{t(UI.hero.kicker)}</div>
           <h1>

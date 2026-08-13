@@ -115,6 +115,16 @@ NO regenerar, NO cambiar de framework, NO rediseñar. Solo cambios quirúrgicos 
 - **2026-06-12m — Paleta unificada:** `--acid` cambiado de #D81A0E a **#BC0000** (= `--red`). Todo el rojo
   del sitio ahora es el Rojo ACiD del brief. Verificado: kicker/acentos = rgb(188,0,0).
 
+- **2026-06-13a — Reveal cinematográfico del Hero (verificado por screenshots, intensidad intermedia, 1 sola vez):**
+  Efecto de carga controlado por JS (`heroPlay` + `requestAnimationFrame` en useEffect) para que corra UNA
+  sola vez tras la hidratación y NO se re-dispare (antes el doble render SSR/hidratación reiniciaba la
+  animación). Secuencia: (1) fade-from-black vía `.hero-veil` (div negro z-3, keyframe `heroVeil` 1.45s),
+  (2) rack focus del video `blur(12px)+brightness .26 → nítido+brightness .70` (keyframe `heroFocus` 1.5s,
+  corre junto al `heroKen` de Ken Burns), (3) cascada tipográfica escalonada kicker→h1→hero-row (`heroRise`,
+  delays .35/.52/.76s). Estado inicial (pre-`.play`) ya renderiza negro+blur+textos ocultos → sin flash.
+  Respeta `prefers-reduced-motion` (todo visible, sin animación). CSS-only en globals.css + clase `hero-cine play`
+  en page.jsx. Sin assets nuevos, paleta intacta. Verificado desktop y móvil.
+
 ## ⛔ REGLA PERMANENTE — Assets binarios (NO NEGOCIABLE)
 - Las carpetas `public/media/` y `public/logos/` contienen assets binarios que se administran
   subiéndolos DIRECTO a GitHub, FUERA del flujo del agente.

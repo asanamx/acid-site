@@ -74,6 +74,29 @@ h1 .alt{color:transparent;-webkit-text-stroke:1.5px var(--ink)}
 @keyframes drip{0%{transform:scaleY(.2);transform-origin:top}55%{transform:scaleY(1)}100%{opacity:0}}
 @media(min-width:821px){.scroll-hint{margin-right:78px}}
 
+/* ---------- HERO CINEMATIC LOAD (una sola vez, post-hidratación) ---------- */
+/* estado inicial (antes de .play): negro total + video desenfocado + textos ocultos */
+.hero-cine video{filter:brightness(.26) contrast(1.14) saturate(.9) blur(12px)}
+.hero-veil{position:absolute;inset:0;z-index:3;background:#000;opacity:1;pointer-events:none}
+.hero-cine .kicker,.hero-cine h1,.hero-cine .hero-row{opacity:0}
+/* al montar (.play): rack focus + fade-from-black + cascada tipográfica */
+.hero-cine.play video{animation:heroKen 30s ease-in-out infinite alternate,heroFocus 1.5s cubic-bezier(.22,.61,.36,1) both}
+@keyframes heroFocus{
+  0%{filter:brightness(.26) contrast(1.14) saturate(.9) blur(12px)}
+  100%{filter:brightness(.70) contrast(1.08) saturate(1.06) blur(0)}
+}
+.hero-cine.play .hero-veil{animation:heroVeil 1.45s ease-out forwards}
+@keyframes heroVeil{0%{opacity:1}55%{opacity:.4}100%{opacity:0}}
+.hero-cine.play .kicker{animation:heroRise .8s cubic-bezier(.2,.6,.2,1) .35s both}
+.hero-cine.play h1{animation:heroRise .9s cubic-bezier(.2,.6,.2,1) .52s both}
+.hero-cine.play .hero-row{animation:heroRise .9s cubic-bezier(.2,.6,.2,1) .76s both}
+@keyframes heroRise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){
+  .hero-veil{display:none}
+  .hero-cine video{filter:brightness(.70) contrast(1.08) saturate(1.06);animation:heroKen 30s ease-in-out infinite alternate}
+  .hero-cine .kicker,.hero-cine h1,.hero-cine .hero-row{opacity:1;animation:none}
+}
+
 /* ---------- MARQUEE ---------- */
 .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:22px 0;background:var(--bg)}
 .track{display:flex;gap:64px;width:max-content;animation:scroll 30s linear infinite;will-change:transform;backface-visibility:hidden}
